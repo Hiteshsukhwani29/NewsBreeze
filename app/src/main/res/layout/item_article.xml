@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/rounded_line"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/article_img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@color/gray"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="20dp"
+            />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/article_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="10dp"
+        android:textSize="22sp"
+        android:text="Lorem ipsum dolor sit amet consectetur adi" />
+
+    <TextView
+        android:id="@+id/article_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="22sp"
+        android:text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan ium doloremque laudan..."/>
+
+    <TextView
+        android:id="@+id/article_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_gray"
+        android:text="29-03-21"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:weightSum="100">
+
+        <Button
+            android:id="@+id/article_btn_read"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="50"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/accent"
+            android:text="Read"/>
+
+        <Button
+            android:id="@+id/article_btn_save"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="50"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/accent"
+            android:text="Save"/>
+
+    </LinearLayout>
+
+</LinearLayout>
