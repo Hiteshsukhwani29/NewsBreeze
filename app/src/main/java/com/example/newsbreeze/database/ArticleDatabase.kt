@@ -11,27 +11,44 @@ import com.example.newsbreeze.model.Article
 @TypeConverters(converter::class)
 abstract class ArticleDatabase: RoomDatabase() {
 
-    abstract val dao: ArticeDao
+//    abstract val dao: ArticeDao
+    abstract fun getArticleDao(): ArticleDao
 
     companion object {
         @Volatile
-        private var INSTANCE: ArticleDatabase? = null
+        private var instance: ArticleDatabase? = null
+        private val LOCK = Any()
 
-        fun getInstance(context: Context): ArticleDatabase {
-            synchronized(this) {
-                var instance = INSTANCE
-                if (instance == null) {
-                    instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        ArticleDatabase::class.java,
-                        "article_database"
-                    )
-                        .fallbackToDestructiveMigration()
-                        .build()
-                    INSTANCE = instance
-                }
-                return instance
-            }
+        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
+            instance ?: createDatabase(context).also { instance = it }
         }
+
+        private fun createDatabase(context: Context) =
+            Room.databaseBuilder(
+                context.applicationContext,
+                ArticleDatabase::class.java,
+                "article_datebase"
+            ).build()
     }
+//    companion object {
+//        @Volatile
+//        private var INSTANCE: ArticleDatabase? = null
+//
+//        fun getInstance(context: Context): ArticleDatabase {
+//            synchronized(this) {
+//                var instance = INSTANCE
+//                if (instance == null) {
+//                    instance = Room.databaseBuilder(
+//                        context.applicationContext,
+//                        ArticleDatabase::class.java,
+//                        "article_database"
+//                    )
+//                        .fallbackToDestructiveMigration()
+//                        .build()
+//                    INSTANCE = instance
+//                }
+//                return instance
+//            }
+//        }
+//    }
 }

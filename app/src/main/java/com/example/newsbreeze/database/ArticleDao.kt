@@ -1,19 +1,18 @@
 package com.example.newsbreeze.database
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.example.newsbreeze.model.Article
 import kotlinx.coroutines.flow.StateFlow
 
-interface ArticeDao {
+@Dao
+interface ArticleDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArticle(article: Article): Long
 
     @Query("SELECT * FROM articles")
-    suspend fun getArticles(): StateFlow<List<Article>>
+    fun getArticles(): LiveData<List<Article>>
 
     @Delete
     suspend fun deleteArticle(article: Article)

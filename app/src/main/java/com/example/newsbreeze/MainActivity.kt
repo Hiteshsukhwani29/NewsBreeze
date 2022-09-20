@@ -11,7 +11,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.newsbreeze.database.ArticleDatabase
 import com.example.newsbreeze.databinding.ActivityMainBinding
+import com.example.newsbreeze.repository.NewsRepository
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
     }
 }

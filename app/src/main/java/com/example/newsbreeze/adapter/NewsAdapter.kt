@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsbreeze.R
 import com.example.newsbreeze.model.Article
-import com.squareup.picasso.Picasso
+//import com.squareup.picasso.Picasso
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
@@ -34,7 +34,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article = differ.currentList[position]
-        Picasso.get().load(article.url).into(holder.ArticleImg)
+//        Picasso.get().load(article.url).into(holder.ArticleImg)
         holder.ArticleTitle.text = article.title
         holder.ArticleDescription.text = article.description
         holder.ArticleDate.text = article.publishedAt
