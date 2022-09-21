@@ -17,6 +17,6 @@ class HomeViewModel( val newsRepository: NewsRepository ) : ViewModel() {
 
     fun getNews(countryCode: String) = viewModelScope.launch{
         val response = newsRepository.getNews(countryCode, pageNumber)
-        Log.d("Response",response.toString())
+        Log.d("Response",response.body().toString())
     }
 }

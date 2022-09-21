@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsbreeze.adapter.NewsAdapter
@@ -29,13 +30,16 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+//        val homeViewModel =
+//            ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val newsRepository = NewsRepository(ArticleDatabase(requireActivity()))
+
+        val viewModelFactory = HomeViewModelFactory(newsRepository)
+        val viewModel = ViewModelProvider(this,viewModelFactory).get(HomeViewModel::class.java)
 
         newsAdapter = NewsAdapter()
         binding.rvBreakingNews.apply {
@@ -43,7 +47,7 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity)
         }
 
-        homeViewModel.getNews("in")
+        viewModel.getNews("in")
         return root
     }
 
