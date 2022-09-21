@@ -5,6 +5,7 @@ import androidx.lifecycle.*
 import com.example.newsbreeze.model.NewsResponse
 import com.example.newsbreeze.repository.NewsRepository
 import kotlinx.coroutines.launch
+import retrofit2.Response
 
 class HomeViewModel( val newsRepository: NewsRepository ) : ViewModel() {
 
@@ -14,9 +15,10 @@ class HomeViewModel( val newsRepository: NewsRepository ) : ViewModel() {
 //    val text: LiveData<String> = _text
 
     val pageNumber: Int = 1
+    var response: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
 
     fun getNews(countryCode: String) = viewModelScope.launch{
-        val response = newsRepository.getNews(countryCode, pageNumber)
-        Log.d("Response",response.body().toString())
+        response?.postValue(newsRepository.getNews(countryCode,pageNumber))
+//        response?.value =  newsRepository.getNews(countryCode, pageNumber)
     }
 }
