@@ -9,16 +9,16 @@ import retrofit2.Response
 
 class HomeViewModel( val newsRepository: NewsRepository ) : ViewModel() {
 
-//    private val _text = MutableLiveData<String>().apply {
-//        value = "This is home Fragment"
-//    }
-//    val text: LiveData<String> = _text
-
     val pageNumber: Int = 1
     var response: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
+    var searchResponse: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
 
     fun getNews(countryCode: String) = viewModelScope.launch{
         response?.postValue(newsRepository.getNews(countryCode,pageNumber))
-//        response?.value =  newsRepository.getNews(countryCode, pageNumber)
     }
+
+    fun getSearchedNews(query: String) = viewModelScope.launch{
+        searchResponse?.postValue(newsRepository.getSearchedNews(query,pageNumber))
+    }
+
 }

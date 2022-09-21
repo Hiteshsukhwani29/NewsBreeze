@@ -1,6 +1,8 @@
 package com.example.newsbreeze.ui.home
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -51,11 +53,29 @@ class HomeFragment : Fragment() {
 
         viewModel.getNews("in")
 
-
         viewModel.response?.observe(viewLifecycleOwner, Observer {
             Log.d("final result", it.body()?.articles.toString())
             newsAdapter.differ.submitList(it.body()?.articles)
         })
+
+        viewModel.searchResponse?.observe(viewLifecycleOwner, Observer {
+            Log.d("final result search", it.body()?.articles.toString())
+            newsAdapter.differ.submitList(it.body()?.articles)
+        })
+
+        binding.etSearch.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                viewModel.getSearchedNews(p0.toString())
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
+
         return root
     }
 

@@ -55,9 +55,11 @@
                 android:id="@+id/search_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/ic_baseline_search_24" />
 
             <EditText
+                android:id="@+id/et_search"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:textSize="14sp"
@@ -72,6 +74,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:src="@drawable/ic_baseline_filter_alt_24" />
 
         </RelativeLayout>
@@ -79,6 +82,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_breaking_news"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:overScrollMode="never"/>
 
 </LinearLayout>
