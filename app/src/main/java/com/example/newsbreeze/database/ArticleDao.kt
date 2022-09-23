@@ -12,7 +12,7 @@ interface ArticleDao {
     suspend fun insertArticle(article: Article): Long
 
     @Query("SELECT * FROM articles")
-    fun getArticles(): LiveData<List<Article>>
+    suspend fun getArticles(): List<Article>
 
     @Delete
     suspend fun deleteArticle(article: Article)

@@ -7,12 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsbreeze.adapter.NewsAdapter
 import com.example.newsbreeze.database.ArticleDatabase
@@ -29,29 +27,22 @@ class HomeFragment : Fragment() {
 
     private lateinit var newsAdapter: NewsAdapter
 
+    private lateinit var viewModel: HomeViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val homeViewModel =
-//            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val newsRepository = NewsRepository(ArticleDatabase(requireActivity()))
 
         val viewModelFactory = HomeViewModelFactory(newsRepository)
-        val viewModel = ViewModelProvider(this,viewModelFactory).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
 
-        newsAdapter = NewsAdapter()
-        binding.rvBreakingNews.apply {
-            adapter = newsAdapter
-            layoutManager = LinearLayoutManager(activity)
-        }
-
-        viewModel.getNews("in")
+        newsAdapter = NewsAdapter(viewModel)
 
         viewModel.response?.observe(viewLifecycleOwner, Observer {
             Log.d("final result", it.body()?.articles.toString())
@@ -63,7 +54,7 @@ class HomeFragment : Fragment() {
             newsAdapter.differ.submitList(it.body()?.articles)
         })
 
-        binding.etSearch.addTextChangedListener(object: TextWatcher {
+        binding.etSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
@@ -76,7 +67,20 @@ class HomeFragment : Fragment() {
 
         })
 
+        binding.homeSavedBtn.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionNavHomeToSavedFragment())
+        }
+
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getNews("in")
+        binding.rvBreakingNews.apply {
+            adapter = newsAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
     }
 
     override fun onDestroyView() {

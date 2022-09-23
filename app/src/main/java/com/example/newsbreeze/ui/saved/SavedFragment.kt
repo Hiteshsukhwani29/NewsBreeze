@@ -1,32 +1,65 @@
 package com.example.newsbreeze.ui.saved
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.newsbreeze.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.newsbreeze.adapter.NewsAdapter
+import com.example.newsbreeze.database.ArticleDatabase
+import com.example.newsbreeze.databinding.FragmentHomeBinding
+import com.example.newsbreeze.databinding.FragmentSavedBinding
+import com.example.newsbreeze.repository.NewsRepository
+import com.example.newsbreeze.ui.saved.SavedViewModel
+import com.example.newsbreeze.ui.saved.SavedViewModelFactory
 
 class SavedFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SavedFragment()
-    }
+    private var _binding: FragmentSavedBinding? = null
 
-    private lateinit var viewModel: SavedViewModel
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
+    private lateinit var newsAdapter: NewsAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_saved, container, false)
+    ): View {
+        _binding = FragmentSavedBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        val newsRepository = NewsRepository(ArticleDatabase(requireActivity()))
+
+        val viewModelFactory = SavedViewModelFactory(newsRepository)
+        val viewModel = ViewModelProvider(this, viewModelFactory).get(SavedViewModel::class.java)
+
+        newsAdapter = NewsAdapter()
+        binding.rvBreakingNews.apply {
+            adapter = newsAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
+
+        viewModel.getSavedNews()
+
+        viewModel.response?.observe(viewLifecycleOwner, Observer {
+            Log.d("final result", it.toString())
+            newsAdapter.differ.submitList(it)
+        })
+
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SavedViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
 }

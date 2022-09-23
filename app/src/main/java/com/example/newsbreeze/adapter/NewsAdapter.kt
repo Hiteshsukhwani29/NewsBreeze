@@ -4,19 +4,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsbreeze.R
+import com.example.newsbreeze.database.ArticleDatabase
 import com.example.newsbreeze.model.Article
+import com.example.newsbreeze.ui.home.HomeViewModel
+import com.example.newsbreeze.ui.home.HomeViewModelFactory
 import com.squareup.picasso.Picasso
 
 //import com.squareup.picasso.Picasso
 
-class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter(viewModel: HomeViewModel? = null) :
+    RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
+    var viewModel: HomeViewModel? = viewModel
     private val differCallback = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.url == newItem.url
@@ -37,22 +44,25 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article = differ.currentList[position]
-        if(article.urlToImage!=null) {
+        if (article.urlToImage != null) {
             Picasso.get().load(article.urlToImage).into(holder.ArticleImg)
         }
-        if(article.title!=null){
+        if (article.title != null) {
             holder.ArticleTitle.text = article.title
-        }
-        else{
+        } else {
             holder.ArticleTitle.visibility = GONE
         }
-        if(article.description!=null){
+        if (article.description != null) {
             holder.ArticleDescription.text = article.description
-        }
-        else{
+        } else {
             holder.ArticleDescription.visibility = GONE
         }
         holder.ArticleDate.text = article.publishedAt
+        holder.ArticleSaveBtn.setOnClickListener {
+            if (viewModel != null) {
+                viewModel!!.saveNews(article)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -64,5 +74,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
         val ArticleTitle: TextView = itemView.findViewById(R.id.article_title)
         val ArticleDescription: TextView = itemView.findViewById(R.id.article_description)
         val ArticleDate: TextView = itemView.findViewById(R.id.article_date)
+        val ArticleSaveBtn: Button = itemView.findViewById(R.id.article_btn_save);
+        val ArticleReadBtn: Button = itemView.findViewById(R.id.article_btn_read);
     }
 }

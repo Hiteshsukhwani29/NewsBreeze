@@ -7,11 +7,11 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.newsbreeze.model.Article
 
-@Database( entities = [Article::class], version = 1)
+@Database(entities = [Article::class], version = 2)
 @TypeConverters(converter::class)
-abstract class ArticleDatabase: RoomDatabase() {
+abstract class ArticleDatabase : RoomDatabase() {
 
-//    abstract val dao: ArticeDao
+    //    abstract val dao: ArticeDao
     abstract fun getArticleDao(): ArticleDao
 
     companion object {
@@ -28,7 +28,9 @@ abstract class ArticleDatabase: RoomDatabase() {
                 context.applicationContext,
                 ArticleDatabase::class.java,
                 "article_datebase"
-            ).build()
+            )
+                .fallbackToDestructiveMigration()
+                .build()
     }
 //    companion object {
 //        @Volatile
