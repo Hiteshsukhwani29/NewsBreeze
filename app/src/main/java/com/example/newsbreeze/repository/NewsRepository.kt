@@ -18,10 +18,7 @@ class NewsRepository(val database: ArticleDatabase) {
         return RetrofitInstance.api.searchNews(query, page)
     }
 
-    suspend fun getRoomNews(): List<Article> {
-        Log.d("Room Data", database.getArticleDao().getArticles().toString())
-        return database.getArticleDao().getArticles()
-    }
+    fun getRoomNews() = database.getArticleDao().getArticles()
 
     suspend fun insertRoomArticle(article: Article) {
         Log.d("Add Room Data", article.toString())

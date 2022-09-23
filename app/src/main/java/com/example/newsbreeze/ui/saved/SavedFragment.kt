@@ -10,7 +10,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.newsbreeze.adapter.NewsAdapter
 import com.example.newsbreeze.database.ArticleDatabase
 import com.example.newsbreeze.databinding.FragmentHomeBinding
@@ -43,17 +45,38 @@ class SavedFragment : Fragment() {
         val viewModel = ViewModelProvider(this, viewModelFactory).get(SavedViewModel::class.java)
 
         newsAdapter = NewsAdapter()
-        binding.rvBreakingNews.apply {
+        binding.rvSavedNews.apply {
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
         }
 
-        viewModel.getSavedNews()
-
-        viewModel.response?.observe(viewLifecycleOwner, Observer {
-            Log.d("final result", it.toString())
+        viewModel.getSavedNews().observe(viewLifecycleOwner, Observer {
             newsAdapter.differ.submitList(it)
         })
+
+        val itemTouchHelperCallback = object: ItemTouchHelper.SimpleCallback(
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ){
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return true
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                val article = newsAdapter.differ.currentList[position]
+                viewModel.deleteNews(article)
+            }
+
+        }
+
+        ItemTouchHelper(itemTouchHelperCallback).apply {
+            attachToRecyclerView(binding.rvSavedNews)
+        }
 
         return root
     }

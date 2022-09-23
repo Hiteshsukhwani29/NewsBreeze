@@ -10,12 +10,7 @@ import retrofit2.Response
 
 class SavedViewModel(val newsRepository: NewsRepository) : ViewModel() {
 
-    var response: MutableLiveData<List<Article>>? = MutableLiveData()
-
-    fun getSavedNews() = viewModelScope.launch {
-        response?.postValue(newsRepository.getRoomNews())
-        Log.d("saved news", response?.value.toString())
-    }
+    fun getSavedNews() = newsRepository.getRoomNews()
 
     fun deleteNews(article: Article) = viewModelScope.launch {
         newsRepository.deleteRoomArticle(article)
