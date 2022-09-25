@@ -10,7 +10,7 @@ import retrofit2.Response
 
 class HomeViewModel(val newsRepository: NewsRepository) : ViewModel() {
 
-    val pageNumber: Int = 1
+    var pageNumber: Int = 1
     var response: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
     var searchResponse: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
 
