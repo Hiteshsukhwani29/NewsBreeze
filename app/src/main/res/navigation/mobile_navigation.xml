@@ -23,22 +23,8 @@
         android:label="fragment_detailed_news"
         tools:layout="@layout/fragment_detailed_news" >
         <argument
-            android:name="author"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="publishedAt"
-            app:argType="string" />
-        <argument
-            android:name="title"
-            app:argType="string" />
-        <argument
-            android:name="content"
-            app:argType="string" />
-        <argument
-            android:name="urlToImage"
-            app:argType="string"
-            app:nullable="true" />
+            android:name="article"
+            app:argType="com.example.newsbreeze.model.Article" />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"

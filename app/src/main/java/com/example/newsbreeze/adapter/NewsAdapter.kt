@@ -1,5 +1,7 @@
 package com.example.newsbreeze.adapter
 
+import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -7,23 +9,21 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsbreeze.R
-import com.example.newsbreeze.database.ArticleDatabase
 import com.example.newsbreeze.model.Article
+import com.example.newsbreeze.ui.home.HomeFragmentDirections
 import com.example.newsbreeze.ui.home.HomeViewModel
-import com.example.newsbreeze.ui.home.HomeViewModelFactory
 import com.squareup.picasso.Picasso
 
-//import com.squareup.picasso.Picasso
-
-class NewsAdapter(viewModel: HomeViewModel? = null) :
+class NewsAdapter(var viewModel: HomeViewModel? = null) :
     RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
-    var viewModel: HomeViewModel? = viewModel
     private val differCallback = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.url == newItem.url
@@ -44,6 +44,10 @@ class NewsAdapter(viewModel: HomeViewModel? = null) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article = differ.currentList[position]
+        if(viewModel==null){
+            holder.ArticleSaveBtn.visibility = GONE
+            holder.ArticleReadBtn.visibility = GONE
+        }
         if (article.urlToImage != null) {
             Picasso.get().load(article.urlToImage).into(holder.ArticleImg)
         }
@@ -58,10 +62,17 @@ class NewsAdapter(viewModel: HomeViewModel? = null) :
             holder.ArticleDescription.visibility = GONE
         }
         holder.ArticleDate.text = article.publishedAt
+
         holder.ArticleSaveBtn.setOnClickListener {
             if (viewModel != null) {
                 viewModel!!.saveNews(article)
             }
+        }
+
+        holder.ArticleReadBtn.setOnClickListener {
+            it.findNavController().navigate(
+                HomeFragmentDirections.actionNavHomeToDetailedNewsFragment(article)
+            )
         }
     }
 

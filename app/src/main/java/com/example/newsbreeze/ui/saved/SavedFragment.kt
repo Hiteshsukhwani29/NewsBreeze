@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ import com.example.newsbreeze.database.ArticleDatabase
 import com.example.newsbreeze.databinding.FragmentHomeBinding
 import com.example.newsbreeze.databinding.FragmentSavedBinding
 import com.example.newsbreeze.repository.NewsRepository
+import com.example.newsbreeze.ui.home.HomeFragmentDirections
 import com.example.newsbreeze.ui.saved.SavedViewModel
 import com.example.newsbreeze.ui.saved.SavedViewModelFactory
 
@@ -54,6 +56,10 @@ class SavedFragment : Fragment() {
             newsAdapter.differ.submitList(it)
         })
 
+        viewModel.searchResponse?.observe(viewLifecycleOwner, Observer {
+            newsAdapter.differ.submitList(it)
+        })
+
         val itemTouchHelperCallback = object: ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
@@ -77,6 +83,19 @@ class SavedFragment : Fragment() {
         ItemTouchHelper(itemTouchHelperCallback).apply {
             attachToRecyclerView(binding.rvSavedNews)
         }
+
+        binding.etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                viewModel.searchSavedNews("%"+p0.toString()+"%")
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
 
         return root
     }

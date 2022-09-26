@@ -57,50 +57,10 @@ class HomeFragment : Fragment() {
 
         binding.etSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-                binding.rvBreakingNews.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                    override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                        super.onScrollStateChanged(recyclerView, newState)
-                        if (!recyclerView.canScrollVertically(1)) {
-                            viewModel.pageNumber++
-                            viewModel.getNews("in")
-                        }
-                    }
-                })
-
-                binding.rvBreakingNews.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                    override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                        super.onScrollStateChanged(recyclerView, newState)
-                        if (!recyclerView.canScrollVertically(-1)) {
-                            viewModel.pageNumber--
-                            viewModel.getNews("in")
-                        }
-                    }
-                })
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 viewModel.getSearchedNews(p0.toString())
-
-                binding.rvBreakingNews.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                    override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                        super.onScrollStateChanged(recyclerView, newState)
-                        if (!recyclerView.canScrollVertically(1)) {
-                            viewModel.pageNumber++
-                            viewModel.getSearchedNews(p0.toString())
-                        }
-                    }
-                })
-
-                binding.rvBreakingNews.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                    override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                        super.onScrollStateChanged(recyclerView, newState)
-                        if (!recyclerView.canScrollVertically(-1)) {
-                            viewModel.pageNumber--
-                            viewModel.getSearchedNews(p0.toString())
-                        }
-                    }
-                })
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -117,6 +77,15 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        viewModel.getNews("in")
+        binding.rvBreakingNews.apply {
+            adapter = newsAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
         viewModel.getNews("in")
         binding.rvBreakingNews.apply {
             adapter = newsAdapter

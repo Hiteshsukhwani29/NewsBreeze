@@ -11,4 +11,5 @@
     <color name="accent">#94C77D</color>
     <color name="gray">#e8e8f7</color>
     <color name="text_gray">#C1C0BF</color>
+    <color name="theme_bg">#f8f8fb</color>
 </resources>

@@ -8,7 +8,7 @@ import com.example.newsbreeze.ui.detailed.DetailedNewsViewModel
 class DetailedNewsViewModelFactory(val newsRepository: NewsRepository ): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailedNewsViewModel::class.java)) {
-            return DetailedNewsViewModel() as T
+            return DetailedNewsViewModel(newsRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

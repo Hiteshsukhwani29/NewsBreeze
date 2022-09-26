@@ -5,6 +5,7 @@ import androidx.lifecycle.*
 import com.example.newsbreeze.model.Article
 import com.example.newsbreeze.model.NewsResponse
 import com.example.newsbreeze.repository.NewsRepository
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -13,6 +14,7 @@ class HomeViewModel(val newsRepository: NewsRepository) : ViewModel() {
     var pageNumber: Int = 1
     var response: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
     var searchResponse: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
+    var alreadySaved: Boolean = false
 
     fun getNews(countryCode: String) = viewModelScope.launch {
         response?.postValue(newsRepository.getNews(countryCode, pageNumber))
@@ -27,8 +29,8 @@ class HomeViewModel(val newsRepository: NewsRepository) : ViewModel() {
         Log.d("working", "working")
     }
 
-    fun deleteNews(article: Article) = viewModelScope.launch {
-        newsRepository.deleteRoomArticle(article)
+    fun isAlreadySaved(id: Int) = viewModelScope.launch {
+        newsRepository.isAlreadySaved(id)
     }
 
 }

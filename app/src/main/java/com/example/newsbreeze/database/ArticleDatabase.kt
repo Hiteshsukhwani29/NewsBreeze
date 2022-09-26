@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.newsbreeze.model.Article
 
-@Database(entities = [Article::class], version = 2)
+@Database(entities = [Article::class], version = 3)
 @TypeConverters(converter::class)
 abstract class ArticleDatabase : RoomDatabase() {
 

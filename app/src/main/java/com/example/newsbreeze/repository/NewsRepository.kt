@@ -20,10 +20,16 @@ class NewsRepository(val database: ArticleDatabase) {
 
     fun getRoomNews() = database.getArticleDao().getArticles()
 
+    fun isAlreadySaved(id: Int) {
+        database.getArticleDao().isAlreadySaved(id)
+    }
+
     suspend fun insertRoomArticle(article: Article) {
         Log.d("Add Room Data", article.toString())
         database.getArticleDao().insertArticle(article)
     }
+
+    suspend fun searchRoomNews(query: String) = database.getArticleDao().searchSavedNews(query)
 
     suspend fun deleteRoomArticle(article: Article) =
         database.getArticleDao().deleteArticle(article)
