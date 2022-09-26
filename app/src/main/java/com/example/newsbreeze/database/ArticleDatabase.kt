@@ -11,7 +11,6 @@ import com.example.newsbreeze.model.Article
 @TypeConverters(converter::class)
 abstract class ArticleDatabase : RoomDatabase() {
 
-    //    abstract val dao: ArticeDao
     abstract fun getArticleDao(): ArticleDao
 
     companion object {
@@ -32,25 +31,4 @@ abstract class ArticleDatabase : RoomDatabase() {
                 .fallbackToDestructiveMigration()
                 .build()
     }
-//    companion object {
-//        @Volatile
-//        private var INSTANCE: ArticleDatabase? = null
-//
-//        fun getInstance(context: Context): ArticleDatabase {
-//            synchronized(this) {
-//                var instance = INSTANCE
-//                if (instance == null) {
-//                    instance = Room.databaseBuilder(
-//                        context.applicationContext,
-//                        ArticleDatabase::class.java,
-//                        "article_database"
-//                    )
-//                        .fallbackToDestructiveMigration()
-//                        .build()
-//                    INSTANCE = instance
-//                }
-//                return instance
-//            }
-//        }
-//    }
 }

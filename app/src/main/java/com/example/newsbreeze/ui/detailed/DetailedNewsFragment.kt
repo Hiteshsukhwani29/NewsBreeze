@@ -34,7 +34,7 @@ class DetailedNewsFragment : Fragment() {
         val newsRepository = NewsRepository(ArticleDatabase(requireActivity()))
 
         val viewModelFactory = DetailedNewsViewModelFactory(newsRepository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(DetailedNewsViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory)[DetailedNewsViewModel::class.java]
 
         viewModel.setDetailedArticle(args.article)
 
@@ -46,7 +46,7 @@ class DetailedNewsFragment : Fragment() {
         Picasso.get().load(viewModel.articleImgUrl).into(binding.bgImg)
 
         binding.saveBtn.setOnClickListener {
-            viewModel!!.saveNews(args.article)
+            viewModel.saveNews(args.article)
         }
 
         return root

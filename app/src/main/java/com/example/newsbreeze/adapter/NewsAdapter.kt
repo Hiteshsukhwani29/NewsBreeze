@@ -1,7 +1,5 @@
 package com.example.newsbreeze.adapter
 
-import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -9,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -85,7 +81,7 @@ class NewsAdapter(var viewModel: HomeViewModel? = null) :
         val ArticleTitle: TextView = itemView.findViewById(R.id.article_title)
         val ArticleDescription: TextView = itemView.findViewById(R.id.article_description)
         val ArticleDate: TextView = itemView.findViewById(R.id.article_date)
-        val ArticleSaveBtn: Button = itemView.findViewById(R.id.article_btn_save);
-        val ArticleReadBtn: Button = itemView.findViewById(R.id.article_btn_read);
+        val ArticleSaveBtn: Button = itemView.findViewById(R.id.article_btn_save)
+        val ArticleReadBtn: Button = itemView.findViewById(R.id.article_btn_read)
     }
 }

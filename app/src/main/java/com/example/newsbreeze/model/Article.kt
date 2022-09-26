@@ -3,9 +3,7 @@ package com.example.newsbreeze.model
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.versionedparcelable.VersionedParcelize
 import kotlinx.android.parcel.Parcelize
-import kotlinx.android.parcel.RawValue
 
 @Entity(
     tableName = "articles"

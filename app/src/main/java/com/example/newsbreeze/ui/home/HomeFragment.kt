@@ -7,13 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.newsbreeze.adapter.NewsAdapter
 import com.example.newsbreeze.database.ArticleDatabase
 import com.example.newsbreeze.databinding.FragmentHomeBinding
@@ -41,19 +38,19 @@ class HomeFragment : Fragment() {
         val newsRepository = NewsRepository(ArticleDatabase(requireActivity()))
 
         val viewModelFactory = HomeViewModelFactory(newsRepository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory)[HomeViewModel::class.java]
 
         newsAdapter = NewsAdapter(viewModel)
 
-        viewModel.response?.observe(viewLifecycleOwner, Observer {
+        viewModel.response?.observe(viewLifecycleOwner) {
             Log.d("final result", it.body()?.articles.toString())
             newsAdapter.differ.submitList(it.body()?.articles)
-        })
+        }
 
-        viewModel.searchResponse?.observe(viewLifecycleOwner, Observer {
+        viewModel.searchResponse?.observe(viewLifecycleOwner) {
             Log.d("final result search", it.body()?.articles.toString())
             newsAdapter.differ.submitList(it.body()?.articles)
-        })
+        }
 
         binding.etSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {

@@ -1,17 +1,18 @@
 package com.example.newsbreeze.ui.home
 
 import android.util.Log
-import androidx.lifecycle.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.newsbreeze.model.Article
 import com.example.newsbreeze.model.NewsResponse
 import com.example.newsbreeze.repository.NewsRepository
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class HomeViewModel(val newsRepository: NewsRepository) : ViewModel() {
 
-    var pageNumber: Int = 1
+    private var pageNumber: Int = 1
     var response: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
     var searchResponse: MutableLiveData<Response<NewsResponse>>? = MutableLiveData()
     var alreadySaved: Boolean = false

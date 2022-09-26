@@ -1,10 +1,11 @@
 package com.example.newsbreeze.ui.saved
 
-import androidx.lifecycle.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.newsbreeze.model.Article
 import com.example.newsbreeze.repository.NewsRepository
 import kotlinx.coroutines.launch
-import retrofit2.Response
 
 class SavedViewModel(val newsRepository: NewsRepository) : ViewModel() {
 

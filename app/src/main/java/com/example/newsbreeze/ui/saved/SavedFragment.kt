@@ -3,25 +3,18 @@ package com.example.newsbreeze.ui.saved
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsbreeze.adapter.NewsAdapter
 import com.example.newsbreeze.database.ArticleDatabase
-import com.example.newsbreeze.databinding.FragmentHomeBinding
 import com.example.newsbreeze.databinding.FragmentSavedBinding
 import com.example.newsbreeze.repository.NewsRepository
-import com.example.newsbreeze.ui.home.HomeFragmentDirections
-import com.example.newsbreeze.ui.saved.SavedViewModel
-import com.example.newsbreeze.ui.saved.SavedViewModelFactory
 
 class SavedFragment : Fragment() {
 
@@ -44,7 +37,7 @@ class SavedFragment : Fragment() {
         val newsRepository = NewsRepository(ArticleDatabase(requireActivity()))
 
         val viewModelFactory = SavedViewModelFactory(newsRepository)
-        val viewModel = ViewModelProvider(this, viewModelFactory).get(SavedViewModel::class.java)
+        val viewModel = ViewModelProvider(this, viewModelFactory)[SavedViewModel::class.java]
 
         newsAdapter = NewsAdapter()
         binding.rvSavedNews.apply {
@@ -52,13 +45,13 @@ class SavedFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity)
         }
 
-        viewModel.getSavedNews().observe(viewLifecycleOwner, Observer {
+        viewModel.getSavedNews().observe(viewLifecycleOwner) {
             newsAdapter.differ.submitList(it)
-        })
+        }
 
-        viewModel.searchResponse?.observe(viewLifecycleOwner, Observer {
+        viewModel.searchResponse?.observe(viewLifecycleOwner) {
             newsAdapter.differ.submitList(it)
-        })
+        }
 
         val itemTouchHelperCallback = object: ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
