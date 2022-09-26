@@ -61,10 +61,11 @@ way.
 ## Screenshots
 
 <p align="center">
-  <img src="/docs/images/home.png" width="32%" alt="Home Page"/>
-  <img src="/docs/images/detail.png" width="34%" alt="Detailed News Page"/>
-  <img src="/docs/images/saved.png" width="32%" alt="Saved News Page"/>
-  <img src="/docs/images/search.png" width="32%" alt="Search"/>
+  <img src="/docs/images/home.jpg" width="26%" alt="Home Page"/>
+  <img src="/docs/images/search.jpg" width="26%" alt="Search"/>
+  <img src="/docs/images/ detailed.jpg" width="26%" alt="Detailed News Page"/>
+  <img src="/docs/images/saved.jpg" width="26%" alt="Saved News Page"/>
+  <img src="/docs/images/savedsearch.jpg" width="26%" alt="Saved Search"/>
 </p>
 
 ## Notes
