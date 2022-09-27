@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-mergeDebugResources-54:/layout/activity_main.xml",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-mergeDebugResources-54:/layout/fragment_home.xml",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-mergeDebugResources-54:/layout/fragment_detailed_news.xml",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/fragment_detailed_news.xml"
+    },
+    {
+        "merged": "com.example.newsbreeze.app-mergeDebugResources-54:/layout/fragment_home.xml",
+        "source": "com.example.newsbreeze.app-main-57:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-mergeDebugResources-54:/layout/fragment_saved.xml",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/fragment_saved.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-mergeDebugResources-54:/layout/item_article.xml",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/item_article.xml"
+    }
+]

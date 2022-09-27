@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.newsbreeze.app-mergeDebugResources-53:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/res/values-w1240dp/dimens.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "16,59",
+                        "endColumns": "42,45",
+                        "endOffsets": "54,100"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,98",
+                        "endColumns": "42,45",
+                        "endOffsets": "93,139"
+                    }
+                }
+            ]
+        }
+    ]
+}

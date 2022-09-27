@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".ui.detailed.DetailedNewsFragment">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <ImageView
+            android:id="@+id/bg_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/accent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/title"
+                android:text="29-03-21"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Lorem ipsum dolor sit amet consectetur adi"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frame"
+        android:layout_marginTop="-30dp"
+        android:background="@drawable/detailed_rounded"
+        android:padding="30dp">
+
+        <RelativeLayout
+            android:id="@+id/author_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/author_icon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@color/accent"
+                android:layout_alignParentStart="true"
+                app:riv_corner_radius="5dp" />
+
+            <TextView
+                android:id="@+id/author_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_toLeftOf="@id/save_btn"
+                android:layout_toRightOf="@+id/author_icon"
+                android:paddingHorizontal="15dp"
+                android:text="James Adam" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                app:cornerRadius="5dp"
+                android:backgroundTint="@color/accent"
+                android:layout_alignParentEnd="true"
+                android:text="Save"/>
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/author_card" >
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:textSize="22sp"
+            android:text="Washington - Sed ut perspiciatis un natus error sit voluptatem accusan ium doloremque laudan. sed quia consequuntur magni dolores eos ratione voluptatem sequi nesciunt. Neque porro quisqua uia non mest, qui dolorem ipsum quia dolo rsit amet, consectetur, adipisci velit sed quia non numquam eius modi empora incidunt ut labore et dolo magnam aliquam quaerat volupta. Ut enim ad minima veniam, quis ostrum exercitationem ullam corri suscipit laboriosam, nisi ut aliqu."/>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

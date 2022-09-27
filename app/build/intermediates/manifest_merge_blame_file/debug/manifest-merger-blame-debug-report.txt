@@ -1,0 +1,120 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.newsbreeze"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:6:5-66
+11-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:6:22-64
+12
+13    <application
+13-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:8:5-32:19
+14        android:allowBackup="true"
+14-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:9:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.8.0] /Users/hitesh/.gradle/caches/transforms-3/39f7b9d9aacc66dee36bdc248eb51bae/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+16        android:dataExtractionRules="@xml/data_extraction_rules"
+16-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:10:9-65
+17        android:debuggable="true"
+18        android:fullBackupContent="@xml/backup_rules"
+18-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:11:9-54
+19        android:icon="@mipmap/ic_launcher"
+19-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:12:9-43
+20        android:label="@string/app_name"
+20-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:13:9-41
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:14:9-54
+22        android:supportsRtl="true"
+22-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:15:9-35
+23        android:theme="@style/Theme.NewsBreeze" >
+23-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:16:9-48
+24        <activity
+24-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:18:9-28:20
+25            android:name="com.example.newsbreeze.MainActivity"
+25-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:19:13-41
+26            android:exported="true"
+26-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:20:13-36
+27            android:label="@string/app_name"
+27-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:21:13-45
+28            android:theme="@style/Theme.NewsBreeze.NoActionBar" >
+28-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:22:13-64
+29            <intent-filter>
+29-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:23:13-27:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:24:17-69
+30-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:24:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:26:17-77
+32-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:26:27-74
+33            </intent-filter>
+34        </activity>
+35
+36        <meta-data
+36-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:29:9-31:57
+37            android:name="preloaded_fonts"
+37-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:30:13-43
+38            android:resource="@array/preloaded_fonts" />
+38-->/Users/hitesh/AndroidStudioProjects/NewsBreeze/app/src/main/AndroidManifest.xml:31:13-54
+39
+40        <uses-library
+40-->[androidx.window:window:1.0.0] /Users/hitesh/.gradle/caches/transforms-3/dd51866c52a77b0645fd17d8e57dd64d/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+41            android:name="androidx.window.extensions"
+41-->[androidx.window:window:1.0.0] /Users/hitesh/.gradle/caches/transforms-3/dd51866c52a77b0645fd17d8e57dd64d/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+42            android:required="false" />
+42-->[androidx.window:window:1.0.0] /Users/hitesh/.gradle/caches/transforms-3/dd51866c52a77b0645fd17d8e57dd64d/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+43        <uses-library
+43-->[androidx.window:window:1.0.0] /Users/hitesh/.gradle/caches/transforms-3/dd51866c52a77b0645fd17d8e57dd64d/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+44            android:name="androidx.window.sidecar"
+44-->[androidx.window:window:1.0.0] /Users/hitesh/.gradle/caches/transforms-3/dd51866c52a77b0645fd17d8e57dd64d/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+45            android:required="false" />
+45-->[androidx.window:window:1.0.0] /Users/hitesh/.gradle/caches/transforms-3/dd51866c52a77b0645fd17d8e57dd64d/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+46
+47        <service
+47-->[androidx.room:room-runtime:2.4.0-alpha05] /Users/hitesh/.gradle/caches/transforms-3/486dac79bd2bdec65a3930dab2c3f28c/transformed/room-runtime-2.4.0-alpha05/AndroidManifest.xml:25:9-28:40
+48            android:name="androidx.room.MultiInstanceInvalidationService"
+48-->[androidx.room:room-runtime:2.4.0-alpha05] /Users/hitesh/.gradle/caches/transforms-3/486dac79bd2bdec65a3930dab2c3f28c/transformed/room-runtime-2.4.0-alpha05/AndroidManifest.xml:26:13-74
+49            android:directBootAware="true"
+49-->[androidx.room:room-runtime:2.4.0-alpha05] /Users/hitesh/.gradle/caches/transforms-3/486dac79bd2bdec65a3930dab2c3f28c/transformed/room-runtime-2.4.0-alpha05/AndroidManifest.xml:27:13-43
+50            android:exported="false" />
+50-->[androidx.room:room-runtime:2.4.0-alpha05] /Users/hitesh/.gradle/caches/transforms-3/486dac79bd2bdec65a3930dab2c3f28c/transformed/room-runtime-2.4.0-alpha05/AndroidManifest.xml:28:13-37
+51
+52        <provider
+52-->[com.squareup.picasso:picasso:2.71828] /Users/hitesh/.gradle/caches/transforms-3/fc5a6c22d38346079baaa0c919735b64/transformed/picasso-2.71828/AndroidManifest.xml:8:9-11:40
+53            android:name="com.squareup.picasso.PicassoProvider"
+53-->[com.squareup.picasso:picasso:2.71828] /Users/hitesh/.gradle/caches/transforms-3/fc5a6c22d38346079baaa0c919735b64/transformed/picasso-2.71828/AndroidManifest.xml:9:13-64
+54            android:authorities="com.example.newsbreeze.com.squareup.picasso"
+54-->[com.squareup.picasso:picasso:2.71828] /Users/hitesh/.gradle/caches/transforms-3/fc5a6c22d38346079baaa0c919735b64/transformed/picasso-2.71828/AndroidManifest.xml:10:13-72
+55            android:exported="false" />
+55-->[com.squareup.picasso:picasso:2.71828] /Users/hitesh/.gradle/caches/transforms-3/fc5a6c22d38346079baaa0c919735b64/transformed/picasso-2.71828/AndroidManifest.xml:11:13-37
+56        <provider
+56-->[androidx.emoji2:emoji2:1.2.0] /Users/hitesh/.gradle/caches/transforms-3/6d1f12fac7f8d7d4097c09b8baa37ba5/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+57            android:name="androidx.startup.InitializationProvider"
+57-->[androidx.emoji2:emoji2:1.2.0] /Users/hitesh/.gradle/caches/transforms-3/6d1f12fac7f8d7d4097c09b8baa37ba5/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+58            android:authorities="com.example.newsbreeze.androidx-startup"
+58-->[androidx.emoji2:emoji2:1.2.0] /Users/hitesh/.gradle/caches/transforms-3/6d1f12fac7f8d7d4097c09b8baa37ba5/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+59            android:exported="false" >
+59-->[androidx.emoji2:emoji2:1.2.0] /Users/hitesh/.gradle/caches/transforms-3/6d1f12fac7f8d7d4097c09b8baa37ba5/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+60            <meta-data
+60-->[androidx.emoji2:emoji2:1.2.0] /Users/hitesh/.gradle/caches/transforms-3/6d1f12fac7f8d7d4097c09b8baa37ba5/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+61-->[androidx.emoji2:emoji2:1.2.0] /Users/hitesh/.gradle/caches/transforms-3/6d1f12fac7f8d7d4097c09b8baa37ba5/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+62                android:value="androidx.startup" />
+62-->[androidx.emoji2:emoji2:1.2.0] /Users/hitesh/.gradle/caches/transforms-3/6d1f12fac7f8d7d4097c09b8baa37ba5/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+63            <meta-data
+63-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/hitesh/.gradle/caches/transforms-3/82e6340d8a1476bc54bc76f4481a74dc/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+64                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+64-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/hitesh/.gradle/caches/transforms-3/82e6340d8a1476bc54bc76f4481a74dc/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+65                android:value="androidx.startup" />
+65-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/hitesh/.gradle/caches/transforms-3/82e6340d8a1476bc54bc76f4481a74dc/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+66        </provider>
+67    </application>
+68
+69</manifest>

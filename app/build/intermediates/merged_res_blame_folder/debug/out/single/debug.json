@@ -1,0 +1,158 @@
+[
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_ic_baseline_filter_alt_24.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/ic_baseline_filter_alt_24.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_ic_menu_camera.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/ic_menu_camera.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_ic_menu_gallery.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/ic_menu_gallery.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_ic_baseline_search_24.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_ic_menu_slideshow.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/ic_menu_slideshow.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_rounded_saved_btn.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/rounded_saved_btn.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/layout_fragment_home.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_rounded_search_bg.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/rounded_search_bg.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/navigation_mobile_navigation.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/navigation/mobile_navigation.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/menu_main.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/menu/main.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/layout_activity_main.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/layout_item_article.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/item_article.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/font_passero_one.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/font/passero_one.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-pngs-50:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_rounded_line.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/rounded_line.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/xml_backup_rules.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.newsbreeze.app-merged_res-55:/layout_fragment_home.xml.flat",
+        "source": "com.example.newsbreeze.app-main-57:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_detailed_rounded.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/detailed_rounded.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/font_butterfly_kids.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/font/butterfly_kids.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_ic_saved.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/ic_saved.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/menu_activity_main_drawer.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/menu/activity_main_drawer.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/layout_fragment_detailed_news.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/fragment_detailed_news.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/layout_fragment_saved.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/layout/fragment_saved.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/drawable_side_nav_bar.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/drawable/side_nav_bar.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/font_great_vibes.xml.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/font/great_vibes.xml"
+    },
+    {
+        "merged": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-merged_res-55:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/hitesh/.gradle/daemon/7.3.3/com.example.newsbreeze.app-main-57:/mipmap-hdpi/ic_launcher.webp"
+    }
+]
